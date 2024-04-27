@@ -1,6 +1,6 @@
 #include "library.h"
-
 #include <stdio.h>
+#include "operator.h"
 
 void hello(void) {
     printf("Hello, World!\n");
@@ -57,9 +57,30 @@ void printInfo(){
 
 }
 
+void scanfInfo(){
+    int i = 10;
+    char c;
+    scanf("%d", &i);
+    printf("%d\n", i);
+    fflush(stdin);
+    scanf("%c", &c);
+    printf("c=%c\n", c);
+}
+
+void scanfManyTypes(){
+    int i ,ret;
+    char c;
+    float f;
+    // %c 之前需要加空格
+    ret = scanf("%d %c%f", &i,&c,&f);
+    printf("i=%d,c=%c,f=%5.2f\n",i,c,f);
+}
+
 
 int main(){
-    printInfo();
+    // scanfManyTypes();
+    // int restNum = baseOperator();
+    // printf("restNum=%d", restNum);
 
     return 0;
 }
